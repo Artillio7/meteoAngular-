@@ -1,0 +1,41 @@
+<!-- <div class="card">
+    <h3>{{ville.nom}} demain </h3>
+    <div *ngIf='ville.days != undefined'>
+        Température {{ fahrenheitToCelsius(ville.days[0].temp)}}°C
+    </div>
+    <div *ngIf='ville.days != undefined'>
+        Humidité {{ ville.days[0].humidity}}%
+    </div>
+    <div *ngIf='ville.days != undefined'>
+        Max {{ fahrenheitToCelsius(ville.days[0].tempmax)}}°C
+    </div>
+    <div *ngIf='ville.days != undefined'>
+        Min {{ fahrenheitToCelsius(ville.days[0].tempmin)}}°C
+    </div>
+
+</div> -->
+
+<mat-card >
+    <mat-card-title-group>
+      <mat-card-title>{{ville.nom}}</mat-card-title>
+      <mat-card-subtitle>Demain</mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content *ngIf='ville.days != undefined'>
+        <div>
+            Température {{ fahrenheitToCelsius(ville.days[1].temp)}}°C
+        </div>
+        <div>
+            Humidité {{ ville.days[1].humidity}}%
+        </div>
+        <div >
+            Max {{ fahrenheitToCelsius(ville.days[1].tempmax)}}°C
+        </div>
+        <div >
+            Min {{ fahrenheitToCelsius(ville.days[1].tempmin)}}°C
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>Détails</button>
+      </mat-card-actions>
+  </mat-card>
+

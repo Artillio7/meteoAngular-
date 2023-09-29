@@ -1,0 +1,27 @@
+<!--<div class="header">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="searchBar">
+        <input type="text" name="recherche" placeholder="Ville recherchée" [(ngModel)]="villeAdd">
+        <button (click)="ajoutVille()">Ajouter</button>
+    </div>    
+</div> -->
+
+<mat-toolbar>
+    <span>Météo</span>
+    <div class="field">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input matInput placeholder="Ville recherchée"  [(ngModel)]="villeAdd">
+        </mat-form-field>
+        <button (click)="ajoutVille()" mat-raised-button color="primary">Chercher</button>
+    </div>
+
+</mat-toolbar>
+
+
+
+<div class="card-list">
+    <app-city-card class="item"  *ngFor="let ville of listeVilles" [ville]='ville'>
+    </app-city-card>
+</div>
